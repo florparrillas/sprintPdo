@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,600,700');
+
+
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    line-height: 2.4rem;
+    color: #9E9E9E;
+    font-size: 1.4rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+    background: #F2EFEA;
+}
+
+img {
+    height: 3rem;
+    max-width: 100%;
+    border: none;
+    outline: none;
+    transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+}
+
+
+
+
+
+/* ----------------------------------------------
+	 Cabecera
+----------------------------------------------- */
+
+
+.cabecera_abajo {
+    background-color: #2dac1d;
+     background-image: url(../img/Baner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    height: 100%; 
+}
+
+
+
+.cabecera_arriba {
+    border-bottom: 0.1rem solid #424242;
+    color: #ccc;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.cabecera-arriba-izquierda, .cabecera-arriba-dere {
+    margin: 0.8rem 0;
+}
+
+.cabecera_arriba a {
+    color: white;
+    font-weight: 600;
+    font-size: 1.5rem;
+
+}
+
+.cabecera-arriba-izquierda>li, .cabecera-arriba-dere>li {
+    padding: 0 1rem;
+    line-height: 1.1rem;
+}
+
+.cabecera-arriba-izquierda li, .cabecera-arriba-dere li {
+    display: inline;
+    cursor: pointer;
+}
+
+
+
+/* ----------------------------------------------
+	 Logo
+----------------------------------------------- */
+
+.logo {
+    text-align: right;
+}
+
+.logo .logo-link {
+    height: 4px;
+}
+
+.logo-link {
+    padding: 3.3rem 0;
+    display: inline-block;
+    float: none;
+}
+ .logo-link {
+    height: 4px;
+}
+
+/* ----------------------------------------------
+	 Carro
+----------------------------------------------- */
+#div-carro>.btn {
+    background: url(../img/sprite2.png) no-repeat scroll -1.5rem -10.2rem;
+    line-height: 2rem;
+    color: black;
+    padding: 0 0 0 4.8rem;
+    border: none;
+    border-radius: 0;
+    float: right;
+    outline:0rem !important;
+    outline-width: 0 !important;
+}
+
+#div-carro>.btn:hover {
+    background-position: -1.5rem -15.2rem;
+
+}
+
+
+#carrito-compra {
+    float: left;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.9rem;
+    text-transform: uppercase;
+}
+
+#carrito-total {
+    clear: left;
+    float: left;
+}
+
+#dropdown-carrito {
+    background: #fff;
+    border: 0.1rem solid #e5e5e5;
+    min-width: 18.5rem;
+    max-width: 30rem;
+    position: absolute;
+    right: 10;
+    top: 9rem;
+    z-index: 50;
+}
+
+#dropdown-carrito ul {
+    padding: 2rem;
+    display: inline-table;
+}
+
+#dropdown-carrito .table>tbody>tr>td {
+    padding: 1rem 0;
+}
+
+#dropdown-carrito .nombre-producto {
+    min-width: 16rem;
+    padding-left: 1rem !important;
+}
+
+#dropdown-carrito .precio {
+    display: block;
+    font-size: 1.4rem;
+}
+
+#dropdown-carrito .cant-carro {
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    width: 6rem;
+}
+
+.btn {
+
+    background: #424242 none repeat scroll 0 0;
+    border-radius: 0;
+    color: #fff;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+
+
+/* ----------------------------------------------
+	 Dropdowns Styles
+----------------------------------------------- */
+
+.dropdown-menu {
+    background-clip: padding-box;
+    background-color: #424242;
+    border: none;
+    border-radius: 0rem;
+    box-shadow: none;
+    margin: 1.1rem 0 0;
+    padding: 1.5rem;
+}
+
+
+
+/* ----------------------------------------------
+	 Nav Bar
+----------------------------------------------- */
+.nav1{
+    background-color: #424242;
+    height: 6.5rem;
+}
+
+@media only screen and (max-width: 720px) {
+    .nav1{
+        background-color: #424242;
+        height: 100%;
+    }
+}
+
+.menu{
+    font-size: 2rem;
+    color: white;
+    font-weight: 500;
+    margin-left: 5rem;
+}
+
+
+@media (min-width: 780px){
+    .menu {
+    display: none !important;
+}
+}
+
+ .nav1 .div-nav .opciones li a {
+    padding: 2.2rem 1.8rem;
+    border-radius: 0;
+    overflow: hidden;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+
+}
+
+.nav1 .div-nav .opciones{
+    height: 100%;
+
+}
+
+.nav1 .div-nav .opciones .activo a {
+    color:  #fa4251;
+}
+
+.nav1 .div-nav .opciones li a {
+    font-weight: 500;
+}
+
+
+.nav1 .div-nav .opciones li a:hover, .nav1 .div-nav .opciones li a:focus {
+    background-color: #fa4251;
+    color: #fff;
+}
+
+/* ----------------------------------------------
+	 Buscador
+----------------------------------------------- */
+
+@media (max-width: 780px){
+    .nav1 form .btn_bus {
+    display: none !important;
+}
+}
+
+.nav1 form .btn_bus{
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.nav1 form .btn_bus :hover{
+    color: #fa4251;
+}
+
+#buscar{
+    font-size: 2rem;
+}
+.nav1 form {
+
+        height: 4rem;
+        line-height: 2rem;
+        padding: 0 0px 0 1rem;
+        border: none;
+        font-size: 1.5rem;
+        color: white;
+        border-radius: 0;
+        border-bottom: 1px solid white;
+        background-color: rgba(14, 9, 9, 0);
+        outline: 0px !important;
+
+    }
+
+    .nav1 form input{
+        height: 4rem;
+        line-height: 2rem;
+        padding: 0 0px 0 0rem;
+        border: none;
+        font-size: 2rem;
+        border-radius: 0;
+        background-color: rgba(14, 9, 9, 0) !important;
+        outline: none !important;
+        color: white !important;
+
+}
+
+input:focus, input.form-control:focus {
+
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}

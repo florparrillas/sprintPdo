@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,600,700');
+
+
+
+
+/* ----------------------------------------------
+	 Seccion 3 Productos
+----------------------------------------------- */
+
+/* ----------------------------------------------
+	 Menu Abajo
+----------------------------------------------- */
+
+
+.container_productos_menu{
+    margin-top: 1.5rem;
+}
+
+a.text-hover-dark, .text-dark{
+    font-size: 1.9rem;
+}
+
+
+
+a.text-hover-dark:focus, a.text-hover-dark:hover {
+    color: #212529 !important;
+}
+
+.btn-link {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #bcac76;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    
+    color: #9a884b;
+    text-decoration: underline;
+}
+
+
+
+
+/* ----------------------------------------------
+	 Badge
+----------------------------------------------- */
+
+
+
+.product-badge {
+    position: absolute;
+    top: 1.5rem;
+    left: 2.5rem;
+    padding: 0.5rem 0.8rem;
+    z-index: 20;
+}
+
+.badge-secondary {
+    color: #fff;
+    background-color: #877f64;
+}
+
+.badge {
+    display: inline-block;
+    padding: .25rem .4rem;
+    font-size: 85%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0;
+    }
+
+
+
+ /* ----------------------------------------------
+	 Cambio de imagen
+----------------------------------------------- */
+
+
+/* @media (min-width: 768px){
+.producto:hover .product-image-front {
+    opacity: 0;
+}
+
+} */
+
+ .product-image {
+    position: relative;
+}
+
+.product-image .product-image-front {
+    position: relative;
+    cursor: pointer;
+    transition: opacity .5s ease-in-out;
+    z-index: 10;
+}
+
+.producto  .link_Home:hover{
+color: rgb(64, 223, 24);
+    
+}
+
+.product-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.product-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.position-relative {
+    position: relative !important;
+} 
+
+.carrusel_container  h5{
+   background-color: rgba(0, 0, 0, 0.311);
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+}
+.carrusel_container  p{
+   background-color: rgba(0, 0, 0, 0.311); 
+   color: rgb(255, 255, 255);
+    font-weight: 500;
+}
+
+
+
+
+
+
