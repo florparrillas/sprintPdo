@@ -128,6 +128,31 @@ class Consulta{
         return $producto;
     }      
 
+    public function buscarPorEmail($bd, $usuarios, $email){
+        $sql = "select *  from $usuarios where email ='$email'";        
+        $query = $bd->prepare($sql);
+        $query->execute();
+        $resultado = $query->fetch(PDO::FETCH_ASSOC);
+        return $resultado;        
+    }
+
+    public function guardarUsuario($bd,$tabla,$usuario){
+        $sql = "insert into $tabla (nombreUsuario, email, password, nombre, apellido, role, avatar) values (:userName, :email, :password, :nombre, :apellido, :role, :avatar)";
+        $query = $bd->prepare($sql);
+
+
+        $query->bindValue(':userName', $usuario['userName']);
+        $query->bindValue(':email',$usuario['email']);
+        $query->bindValue(':password',$usuario['password']);
+        $query->bindValue(':nombre',$usuario['nombre']);
+        $query->bindValue(':apellido',$usuario['apellido']);
+        $query->bindValue(':role',$usuario['role']);
+        $query->bindValue(':avatar',$usuario['avatar']);
+        $query->execute();        
+        //Una vez registrado lo mando a la pantalla de login
+        header('location:login.php');
+    }     
+
 /*
 
     //Método para agregar una nueva película

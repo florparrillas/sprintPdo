@@ -1,17 +1,24 @@
 <?php
-  require_once("controladores/funciones.php");
-  require_once("helpers.php");
-  
+  require_once('loader.php');
+
   if($_POST){
-    
-    $errores = validar($_POST,$_FILES); 
+    $usuario =  new Usuario($_POST['email'],$_POST['password'],$_POST['passwordRepeat'],$_POST['usuario'],$_POST['nombre'],$_POST['apellido'],'1',$_FILES);
+    $errores = $validar->validarRegistroUsuario($usuario);
+
+   
+   
    if(count($errores)==0){     
-    $avatar = armarAvatar($_FILES); 
-    $registro = armarRegistro($_POST,$avatar);
-     guardarRegistro($registro);
-     
-     //Una vez registrado lo mando a la pantalla de login
-     header("location:login.php");
+    $usuarioEncontrado = $consulta->buscarPorEmail($bd, 'usuarios', $usuario->getEmail());
+    if($usuarioEncontrado !== false){
+      $errores["email"]="Usuario ya registrado";
+    }else{
+
+
+      $avatar = $armarRegistro->armarAvatar($usuario->getAvatar());
+      $registro = $armarRegistro->armarUsuario($usuario,$avatar);
+      
+      $consulta->guardarUsuario($bd, 'usuarios',$registro);      
+    }
    }
   }
 ?>

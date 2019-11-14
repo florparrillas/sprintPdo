@@ -83,7 +83,7 @@ function armarRegistro($datos, $avatar){
         "usuario" => $datos["usuario"],
         "password" => password_hash($datos["password"],PASSWORD_DEFAULT),
         "avatar"=>$avatar,
-        "role" => 1,        
+        "role" => 1
     ];
     return $usuarios;
 }

@@ -1,30 +1,42 @@
 <?php
-  require_once('controladores/funciones.php');
-  require_once('helpers.php');
+  require_once('loader.php');
 
   if($_POST){
-    $errores = validarLogin($_POST);
+    
+    $usuario = new Usuario($_POST["email"],$_POST["password"]);
+    $errores= $validar->validacionLogin($usuario);
+
     if(count($errores)==0){
-      $usuario = buscarPorEmail($_POST['email']);
-      if($usuario==null){
+      
+
+      $usuarioEncontrado = $consulta->buscarPorEmail($bd, 'usuarios', $usuario->getEmail());
+      if($usuarioEncontrado == false){
         $errores['email']="Usuario no encontrado";
-      }else{
-        if(password_verify($_POST['password'],$usuario['password'])===false){
-          $errores['password']="Datos inválidos...";
-        }else{
-          seteoUsuario($usuario,$_POST);
-          if(validarUsuario()){            
-            header('location:perfil.php');
-            exit;
-          }else{
-            header('location:login.php');
-            exit;
-          }
         }
-      }
+      else{                                
+            if(Autenticador::verificarPassword($usuario->getPassword(),$usuarioEncontrado["password"] )!=true){
+                $errores["password"]="Error en los datos verifique";
+            }
+            else{                                                
+                Autenticador::seteoSesion($usuarioEncontrado);
+                if(isset($_POST["recordar"])){
+                  Autenticador::seteoCookie($usuarioEncontrado);
+                }                  
+                if(Autenticador::validarUsuario()){
+                  
+                  
+                  //redirect("perfil.php");
+                  header('location:perfil.php');
+                }
+                else{
+                  //redirect("registro.php");
+                  header('location:registro.php');
+
+                }                  
+            }          
+        }
     }
   }
-
 ?>
 
 <!doctype html>
