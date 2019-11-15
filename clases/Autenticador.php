@@ -13,8 +13,7 @@ class Autenticador{
 
         $_SESSION["nombre"]= $user["Nombre"];
         $_SESSION["apellido"]= $user["Apellido"];
-        $_SESSION["usuario"]= $user["nombreUsuario"];
-        
+        $_SESSION["usuario"]= $user["nombreUsuario"];        
         $_SESSION["email"] = $user["email"];
         $_SESSION["role"]= $user["role"];
         $_SESSION["avatar"]= $user["avatar"];

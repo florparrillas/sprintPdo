@@ -26,7 +26,7 @@
   <body>
     <div class="container-fluid">
 
-        <?php require_once("navbar.php"); ?>
+        <?php require_once("navbar-2.php"); ?>
 
         
         

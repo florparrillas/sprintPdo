@@ -20,25 +20,33 @@
       <li class="nav-item">
         <a class="nav-link" href="contacto.php">Contacto</a>
       </li>
+
       <?php if(!isset($_SESSION["email"])) :?>
-      <li class="nav-item">
-        <a class="nav-link" href="login.php">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="registro.php">Registro</a>
-      </li>
+        <li class="nav-item">
+            <a class="nav-link" href="login.php">Login</a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link" href="registro.php">Registro</a>
+        </li>      
       <?php else :?>
+
+        <li class="nav-item">
+             <a class="nav-link" href="productoConsulta.php">CRUD_Productos</a>
+        </li>
+
 
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Hola <?=$_SESSION['nombre'] ;?>
         </a>
+        
         <div class="dropdown-menu  bg-light" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Mi cuenta</a>
           <a class="dropdown-item" href="#">Mis compras</a>
           <a class="dropdown-item" href="#">Preguntas</a>
           <a class="dropdown-item" href="#">Favoritos</a>
-          <a class="dropdown-item" href="cargaraProducto.php">Cargar Producto</a>
+          <a class="dropdown-item" href="productoConsulta.php"></a>          
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="logout.php">Cerrar sesion</a>
         </div>
